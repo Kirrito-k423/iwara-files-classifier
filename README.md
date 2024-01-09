@@ -1,6 +1,6 @@
 # iwara-files-classifier
 
-Classify `iwara.tv` videos into different target files (e,g. `Genshin/Ayaka`) by tag-info (e.g, character/game name) in title.
+Classify `iwara.tv` videos into different target files (e,g. `Genshin/Ayaka`) by tag-info (e.g, character/game name) in video filename.
 
 > [!Caution]  
 > Even I am a LSP, but I love China.
