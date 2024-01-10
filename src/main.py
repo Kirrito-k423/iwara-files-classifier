@@ -29,10 +29,10 @@ def main():
         for video in videoList:
             if video.ready == "yes":
                 video.move()
-                break
+                # break
     else:
         yellowPrint("Skip movement.....")
-    exit()
+    # exit()
     passPrint("Print not ready files:")
     for video in videoList:
         if video.ready == "no":
