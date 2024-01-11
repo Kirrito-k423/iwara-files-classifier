@@ -5,6 +5,7 @@ import time
 glv._init()
 
 glv._set("download_path", "E:\Download\Video")
+# glv._set("download_path", "E:\Download")
 
 
 #  video_name -> Game/character name -> target directory
@@ -57,6 +58,7 @@ glv._set("typeIgnorename2directory", {
     "赛马娘": iwara_directory + "赛马娘",
     "机动战队": iwara_directory + "机动战队",
     "FF14": iwara_directory,
+    "明日方舟": iwara_directory,
     
     # anime
     "鬼灭之刃": anime_directory + "鬼灭之刃",

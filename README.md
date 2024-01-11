@@ -2,6 +2,13 @@
 
 Classify `iwara.tv` videos into different target files (e,g. `Genshin/Ayaka`) by tag-info (e.g, character/game name) in video filename on Win10.
 
+
+## Usage
+
+![moveReadyFiles](./photo/moveReadyFiles.png)
+
+![printRest](./photo/printRest.png)
+
 > [!Caution]  
 > Even I am a LSP, but I love China.
 

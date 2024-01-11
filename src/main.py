@@ -11,7 +11,8 @@ def main():
     isIceEnable(args.debug)
     
     # search download directory, target video files
-    files_and_folders = os.listdir(glv._get("download_path"))
+    directory = glv._get("download_path")
+    files_and_folders = [file for file in os.listdir(directory) if file.endswith(".mp4")]
     videoList = []
     for file in files_and_folders:
         ic(file)
