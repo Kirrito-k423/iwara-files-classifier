@@ -9,34 +9,38 @@ class Video():
     game2characters = {
         
         # game
-        "原神":["神里凌华","雷电将军","甘雨","娜维娅",
+        "原神":["神里凌华","雷电将军","甘雨","娜维娅","丝柯克",
               "刻晴","优菈","八重神子","夜兰","凝光","莫娜","丽莎",
-              "芙宁娜","申鹤"], 
-        "崩坏三": ["崩三大鸭","薇塔"],
+              "芙宁娜","申鹤","胡桃","纳西达"], 
+        "崩坏三": ["崩三大鸭","薇塔","琪亚娜"],
         "崩坏星穹铁道": ["卡夫卡","符玄","三月七","镜流","银狼","姬子",
                    "桂乃芬","阮梅","霍霍","黑塔"],
         
         # other game publisher
         "碧蓝航线":["Tashkent","能代","光辉"],
+        "碧蓝档案":["晴奈","Plana","杏山千纱"],
         "幻塔":["陵光"],
         "战双帕弥什":["含英"],    
         "深空之眼":["英招"],    
         "公主链接":["臭鼬"],
+        "赛马娘":["Umamusume"],
+        "机动战队":["陇"],
         
         # Anime
         "鬼灭之刃":["甘露寺蜜璃"],    
+        "FGO":["玛修"],
         
         
         # vtuber
-        "虚拟歌姬":["结月缘"],    
+        "虚拟歌姬":["结月缘","Kangxi"],    
         
     }
     
     gameNickname = \
     {
-        "原神":["Genshin"],    
+        "原神":["Genshin","ヒルチャール","Liyue","璃月"],    
         "崩坏三":["女武神"],    
-        "崩坏星穹铁道":["StarRail"],    
+        "崩坏星穹铁道":["StarRail","Star Rail"],    
         "少女前线":["Frontline"],    
         "碧蓝航线":["Azur Lane","AzurLane","グアム","关岛","慰安", "艦隊",]
                 
@@ -49,7 +53,7 @@ class Video():
         "神里凌华": ["Ayaka"],
         "星铁鸭": [],
         "崩三大鸭": ["大鸭鸭","布洛妮娅","Bronya"],
-        "卡夫卡":["kafka","Kafka","卡芙卡"],
+        "卡夫卡":["kafka","Kafka","Kafuka","卡芙卡"],
         "黑塔":["Herta"],
         "符玄":[],
         "霍霍":["huohuo"],
@@ -70,8 +74,10 @@ class Video():
         "丽莎":["Lisa"],
         "桂乃芬":[],
         "娜维娅":[],
+        "纳西达":["Nahida"],
         "薇塔":[],
         "银狼":[],
+        "胡桃":[],
         "姬子":[],
         "琪亚娜":["Kiana"],
         "丝柯克":["Skirk"],
@@ -80,16 +86,28 @@ class Video():
         "含英":["Hanying"],
         "英招":["YingZhao"],
         "臭鼬":["キャル"],
+        "陇":["朧"],
+        
+        ## Blue Archive
+        "Plana":["プラナ"],
+        "晴奈":[],
+        "杏山千纱":["杏山千纱","Kazusa","カズサ"],
+        
         ## Azur
         "Tashkent":[],
         "能代":["Noshiro"],
         "光辉":[],
         
+        ## 赛马娘
+        "Umamusume":["小巧圓繭"],
+        
         # Anime character
         "甘露寺蜜璃":["Mitsuri Kanroji","Mitsuri"],
+        "玛修":[],
         
         # 虚拟歌姬
         "结月缘":["ゆかりさん","Yuzuki Yukari"],
+        "Kangxi":[],
         "":[],
     }
     
@@ -98,7 +116,9 @@ class Video():
         "Spicy",
         "Savage",
         "Dream of you",
-        "Rollin"
+        "Rollin",
+        "badguy",
+        "WADADA"
     ]
     
     def __init__(self,path,filename):
@@ -108,7 +128,7 @@ class Video():
         [self.game, self.character, self.song] = ["","",""]
         self.regexInfo(filename)
         self.target_path = self.findTarget()
-        if self.character:
+        if self.character or self.game:
             self.ready = "yes"
         else:
             self.ready = "no"
@@ -160,6 +180,8 @@ class Video():
         # if gVal set , use it
         if self.character in glv._get("character2directory"):
             return glv._get("character2directory")[self.character]
+        elif self.game in glv._get("type2directory"):
+            return glv._get("type2directory")[self.game]
         elif self.game == "崩坏星穹铁道" or self.game == "崩坏三":
             return glv._get("bh_directory")+self.character
         else:
@@ -171,7 +193,7 @@ class Video():
     def print(self):
         if self.ready == "yes":
             passPrint(self.filename) 
-            yellowPrint("Game \t\t{}\nCharacter \t{}\nSong \t{}".format(self.game, self.character, self.song))
+            yellowPrint("Game \t\t{}\nCharacter \t{}\nSong\t\t{}".format(self.game, self.character, self.song))
             yellowPrint("Target path: \t{}".format(self.target_path))
         else:
             print(self.filename)
