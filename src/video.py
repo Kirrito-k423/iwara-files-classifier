@@ -14,25 +14,32 @@ class Video():
               "芙宁娜","申鹤","胡桃","纳西达"], 
         "崩坏三": ["崩三大鸭","薇塔","琪亚娜"],
         "崩坏星穹铁道": ["卡夫卡","符玄","三月七","镜流","银狼","姬子",
-                   "桂乃芬","阮梅","霍霍","黑塔"],
+                   "桂乃芬","阮梅","霍霍","黑塔","托帕"],
         
         # other game publisher
-        "碧蓝航线":["Tashkent","能代","光辉"],
-        "碧蓝档案":["晴奈","Plana","杏山千纱"],
+        "碧蓝航线":["Tashkent","能代","光辉","Bremerton"],
+        "碧蓝档案":["晴奈","Plana","杏山千纱","カリン"],
         "幻塔":["陵光"],
         "战双帕弥什":["含英"],    
         "深空之眼":["英招"],    
         "公主链接":["臭鼬"],
-        "赛马娘":["Umamusume"],
+        "赛马娘":["Umamusume","东海帝皇"],
         "机动战队":["陇"],
         
+        
+        "异度之刃2":["老婆光"],
+        "FF14":["踊り子ビ"],
+        
         # Anime
-        "鬼灭之刃":["甘露寺蜜璃"],    
+        "鬼灭之刃":["甘露寺蜜璃","蝴蝶忍"],    
         "FGO":["玛修"],
+        "咒术回战":["釘崎野薔薇"],
+        "死神":["松本乱菊"],
+        "间谍过家家":["约尔"],
         
         
         # vtuber
-        "虚拟歌姬":["结月缘","Kangxi"],    
+        "虚拟歌姬":["结月缘","Kangxi","miku","兎田ぺこら"],    
         
     }
     
@@ -42,7 +49,12 @@ class Video():
         "崩坏三":["女武神"],    
         "崩坏星穹铁道":["StarRail","Star Rail"],    
         "少女前线":["Frontline"],    
-        "碧蓝航线":["Azur Lane","AzurLane","グアム","关岛","慰安", "艦隊",]
+        "战双帕弥什":["zhan shuang","pamish"],    
+        "赛马娘":["ウマ娘"],
+        "碧蓝航线":["Azur Lane","AzurLane","グアム","关岛","慰安", "艦隊",],
+        
+        # anime
+        "死神":["Bleach"],
                 
     }
     
@@ -67,9 +79,9 @@ class Video():
         "芙宁娜":["芙卡洛斯"],
         "凝光":[],
         "申鹤":["Shenhe"],
-        "阮梅":["Ruan_Mei"],
+        "阮梅":["Ruan_Mei","阮"],
         "夜兰":[],
-        "莫娜":["Mona"],
+        "莫娜":["Mona","モナ"],
         "陵光":[],
         "丽莎":["Lisa"],
         "桂乃芬":[],
@@ -77,37 +89,49 @@ class Video():
         "纳西达":["Nahida"],
         "薇塔":[],
         "银狼":[],
+        "托帕":["topaz"],
         "胡桃":[],
         "姬子":[],
         "琪亚娜":["Kiana"],
         "丝柯克":["Skirk"],
         
         # other game publisher
+        "老婆光":["Mythra"],
         "含英":["Hanying"],
         "英招":["YingZhao"],
         "臭鼬":["キャル"],
         "陇":["朧"],
+        "踊り子ビ":[],
         
         ## Blue Archive
         "Plana":["プラナ"],
         "晴奈":[],
         "杏山千纱":["杏山千纱","Kazusa","カズサ"],
+        "カリン":[],
         
         ## Azur
         "Tashkent":[],
         "能代":["Noshiro"],
         "光辉":[],
+        "Bremerton":[],
         
         ## 赛马娘
         "Umamusume":["小巧圓繭"],
+        "东海帝皇":["Tokai Teio","トウカイテイオー"],
         
         # Anime character
         "甘露寺蜜璃":["Mitsuri Kanroji","Mitsuri"],
         "玛修":[],
+        "釘崎野薔薇":["Nobara","Kugisaki"],
+        "松本乱菊":["Rangiku Matsumoto"],
+        "蝴蝶忍":["shinobu","kocho"],
+        "约尔":["Yor Forger"],
         
         # 虚拟歌姬
         "结月缘":["ゆかりさん","Yuzuki Yukari"],
         "Kangxi":[],
+        "miku":[],
+        "兎田ぺこら":["兎田","ぺこら"],
         "":[],
     }
     
@@ -118,7 +142,8 @@ class Video():
         "Dream of you",
         "Rollin",
         "badguy",
-        "WADADA"
+        "WADADA",
+        "NumberNine"
     ]
     
     def __init__(self,path,filename):
@@ -143,7 +168,7 @@ class Video():
                 ic("Match game {} : {} in {}".format(self.game, official_game, filename))
                 break
             for nickname in nicklist:
-                if re.search(nickname,filename):
+                if re.search(nickname,filename,re.I):
                     self.game=official_game
                     ic("Match game {} : {} in {}".format(self.game, nickname, filename))
                     break
@@ -180,8 +205,10 @@ class Video():
         # if gVal set , use it
         if self.character in glv._get("character2directory"):
             return glv._get("character2directory")[self.character]
-        elif self.game in glv._get("type2directory"):
-            return glv._get("type2directory")[self.game]
+        elif self.game in glv._get("typeNoname2directory") and not self.character:
+            return glv._get("typeNoname2directory")[self.game]
+        elif self.game in glv._get("typeIgnorename2directory"):
+            return glv._get("typeIgnorename2directory")[self.game]
         elif self.game == "崩坏星穹铁道" or self.game == "崩坏三":
             return glv._get("bh_directory")+self.character
         else:

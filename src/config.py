@@ -32,18 +32,21 @@ glv._set("character2directory", {
     "银狼": bh_directory + "鸭 - 但是银狼",
     "卡夫卡": bh_directory + "卡夫卡",
     
-    "Kangxi": iwara_directory + "Kangxi"
-    
+    "Kangxi": iwara_directory + "Kangxi",
+    "约尔": anime_directory + "约尔",
+    "老婆光": target_base_path + "\\" + "异度之刃2" 
 
     
     
 })
 
-glv._set("type2directory", {
+glv._set("typeNoname2directory", {
     "原神":genshin_directory+"1 合集",
     "崩坏三":bh_directory + "1 合集",
     "崩坏星穹铁道":bh_directory + "1 合集",
-    
+})
+
+glv._set("typeIgnorename2directory", {  
     "碧蓝航线": iwara_directory + "碧蓝航线 (Azur Lane)",
     "碧蓝档案": iwara_directory + "KK 碧蓝档案 Blue Archive",
     "深空之眼": iwara_directory + "深空之眼",
@@ -53,10 +56,13 @@ glv._set("type2directory", {
     "少女前线": iwara_directory + "少女前线2云图",
     "赛马娘": iwara_directory + "赛马娘",
     "机动战队": iwara_directory + "机动战队",
+    "FF14": iwara_directory,
     
     # anime
     "鬼灭之刃": anime_directory + "鬼灭之刃",
     "FGO": anime_directory + "FGO",
+    "咒术回战": anime_directory,
+    "死神": anime_directory,
     
     "虚拟歌姬": miku_directory
 
