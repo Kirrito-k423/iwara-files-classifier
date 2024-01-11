@@ -7,30 +7,52 @@ import re
 class Video():
     
     game2characters = {
+        
+        # game
         "原神":["神里凌华","雷电将军","甘雨","娜维娅",
               "刻晴","优菈","八重神子","夜兰","凝光","莫娜","丽莎",
-              "芙宁娜"], 
+              "芙宁娜","申鹤"], 
         "崩坏三": ["崩三大鸭","薇塔"],
         "崩坏星穹铁道": ["卡夫卡","符玄","三月七","镜流","银狼","姬子",
-                   "桂乃芬"],
-        "幻塔":["陵光"],
+                   "桂乃芬","阮梅","霍霍","黑塔"],
         
+        # other game publisher
+        "碧蓝航线":["Tashkent","能代","光辉"],
+        "幻塔":["陵光"],
+        "战双帕弥什":["含英"],    
+        "深空之眼":["英招"],    
+        "公主链接":["臭鼬"],
+        
+        # Anime
+        "鬼灭之刃":["甘露寺蜜璃"],    
+        
+        
+        # vtuber
+        "虚拟歌姬":["结月缘"],    
         
     }
     
     gameNickname = \
     {
         "原神":["Genshin"],    
-        "碧蓝航线":["Azur Lane","AzurLane"]
+        "崩坏三":["女武神"],    
+        "崩坏星穹铁道":["StarRail"],    
+        "少女前线":["Frontline"],    
+        "碧蓝航线":["Azur Lane","AzurLane","グアム","关岛","慰安", "艦隊",]
+                
     }
     
     characterNickname = {
-        "雷电将军": ["Raiden Shogun", "雷电", "将军" ,"雷電將軍"],
+        
+        # mihoyo
+        "雷电将军": ["Raiden Shogun","Raiden", "雷电", "将军" ,"雷電將軍"],
         "神里凌华": ["Ayaka"],
         "星铁鸭": [],
         "崩三大鸭": ["大鸭鸭","布洛妮娅","Bronya"],
         "卡夫卡":["kafka","Kafka","卡芙卡"],
+        "黑塔":["Herta"],
         "符玄":[],
+        "霍霍":["huohuo"],
         "三月七":["March 7th"],
         "镜流":[],
         "心海":["kokomi"],
@@ -40,6 +62,8 @@ class Video():
         "刻晴":[],
         "芙宁娜":["芙卡洛斯"],
         "凝光":[],
+        "申鹤":["Shenhe"],
+        "阮梅":["Ruan_Mei"],
         "夜兰":[],
         "莫娜":["Mona"],
         "陵光":[],
@@ -49,12 +73,32 @@ class Video():
         "薇塔":[],
         "银狼":[],
         "姬子":[],
+        "琪亚娜":["Kiana"],
+        "丝柯克":["Skirk"],
+        
+        # other game publisher
+        "含英":["Hanying"],
+        "英招":["YingZhao"],
+        "臭鼬":["キャル"],
+        ## Azur
+        "Tashkent":[],
+        "能代":["Noshiro"],
+        "光辉":[],
+        
+        # Anime character
+        "甘露寺蜜璃":["Mitsuri Kanroji","Mitsuri"],
+        
+        # 虚拟歌姬
+        "结月缘":["ゆかりさん","Yuzuki Yukari"],
         "":[],
     }
     
     
     songName = [
-        
+        "Spicy",
+        "Savage",
+        "Dream of you",
+        "Rollin"
     ]
     
     def __init__(self,path,filename):
@@ -99,7 +143,7 @@ class Video():
                 break
                 
         for song in self.songName:
-            if re.search(song,filename):
+            if re.search(song,filename,re.I):
                 self.song=song
                 ic("Match song {} : {} in {}".format(self.song, song, filename))
                 break
