@@ -39,9 +39,9 @@ def main():
         if video.ready == "no":
             video.print()
     
-    errorPrint("Type y to classify one by one:")
+    errorPrint("Type x to cancel classify one by one:")
     choice = input()
-    if choice == "y":
+    if not choice == "x":
         for video in videoList:
             if video.ready == "no":
                 video.print()
@@ -54,9 +54,11 @@ def main():
                     video.regexInfo(Keyword)
                     video.print()
                     
-                    errorPrint("Type y to move video:")
+                    errorPrint("Type x to cancel move video:")
                     choice = input()
-                    if choice == "y":
+                    if choice == "x":
+                        yellowPrint("Cancel move video")
+                    else:
                         video.move()
                 else:
                     video.regexInfo("Orz")
