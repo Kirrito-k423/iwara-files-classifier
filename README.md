@@ -9,6 +9,8 @@ Classify `iwara.tv` videos into different target files (e,g. `Genshin/Ayaka`) by
 
 ![printRest](./photo/printRest.png)
 
+![oneByone](./photo/oneByone.png)
+
 > [!Caution]  
 > Even I am a LSP, but I love China.
 

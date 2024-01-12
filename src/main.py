@@ -25,7 +25,6 @@ def main():
             
     errorPrint("Type y to move video:")
     choice = input()
-    
     if choice == "y":
         for video in videoList:
             if video.ready == "yes":
@@ -34,11 +33,38 @@ def main():
     else:
         yellowPrint("Skip movement.....")
     # exit()
+    
     passPrint("Print not ready files:")
     for video in videoList:
         if video.ready == "no":
             video.print()
     
+    errorPrint("Type y to classify one by one:")
+    choice = input()
+    if choice == "y":
+        for video in videoList:
+            if video.ready == "no":
+                video.print()
+                
+                yellowPrint("Type Keyword to classify(1. empty to Other type and move 2. \"s\" to skip):")
+                Keyword = input()
+                if Keyword == 's':
+                    None
+                elif Keyword:
+                    video.regexInfo(Keyword)
+                    video.print()
+                    
+                    errorPrint("Type y to move video:")
+                    choice = input()
+                    if choice == "y":
+                        video.move()
+                else:
+                    video.regexInfo("Orz")
+                    video.print()
+                    video.move()
+                # break
+    else:
+        yellowPrint("Skip classify one by one.....")
 
 
 if __name__ == "__main__":

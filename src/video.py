@@ -12,7 +12,7 @@ class Video():
         "原神":["神里凌华","雷电将军","甘雨","娜维娅","丝柯克",
               "刻晴","优菈","八重神子","夜兰","凝光","莫娜","丽莎",
               "芙宁娜","申鹤","胡桃","纳西达"], 
-        "崩坏三": ["崩三大鸭","薇塔","琪亚娜"],
+        "崩坏三": ["崩三大鸭","薇塔","琪亚娜","幽兰戴尔"],
         "崩坏星穹铁道": ["卡夫卡","符玄","三月七","镜流","银狼","姬子",
                    "桂乃芬","阮梅","霍霍","黑塔","托帕","格蕾修"],
         
@@ -42,6 +42,8 @@ class Video():
         # vtuber
         "虚拟歌姬":["结月缘","Kangxi","miku","兎田ぺこら"],    
         
+        "Other":["Orz"],
+        
     }
     
     gameNickname = \
@@ -57,6 +59,7 @@ class Video():
         
         # anime
         "死神":["Bleach"],
+        
                 
     }
     
@@ -66,9 +69,10 @@ class Video():
         "雷电将军": ["Raiden Shogun","Raiden", "雷电", "将军" ,"雷電將軍"],
         "神里凌华": ["Ayaka"],
         "星铁鸭": [],
-        "崩三大鸭": ["大鸭鸭","布洛妮娅","Bronya"],
+        "崩三大鸭": ["大鸭鸭","布洛妮娅","Bronya","鸭"],
         "卡夫卡":["kafka","Kafka","Kafuka","卡芙卡"],
         "黑塔":["Herta"],
+        "幽兰戴尔":["呆鹅"],
         "符玄":[],
         "霍霍":["huohuo"],
         "三月七":["March 7th"],
@@ -135,6 +139,9 @@ class Video():
         "Kangxi":[],
         "miku":[],
         "兎田ぺこら":["兎田","ぺこら"],
+        
+        
+        "Orz":[],
         "":[],
     }
     
@@ -155,11 +162,8 @@ class Video():
         # set 
         [self.game, self.character, self.song] = ["","",""]
         self.regexInfo(filename)
-        self.target_path = self.findTarget()
-        if self.character or self.game:
-            self.ready = "yes"
-        else:
-            self.ready = "no"
+        
+        
         
         
     def regexInfo(self,filename):
@@ -202,6 +206,13 @@ class Video():
                 for game, characterList in self.game2characters.items():
                     if self.character in characterList:
                         self.game = game
+        
+        if self.character or self.game:
+            self.ready = "yes"
+        else:
+            self.ready = "no"
+        
+        self.target_path = self.findTarget()
             
         
     def findTarget(self):

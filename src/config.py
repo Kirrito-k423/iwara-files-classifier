@@ -66,7 +66,10 @@ glv._set("typeIgnorename2directory", {
     "咒术回战": anime_directory,
     "死神": anime_directory,
     
-    "虚拟歌姬": miku_directory
+    "虚拟歌姬": miku_directory,
+    
+    
+    "Other": iwara_directory + "杂"
 
     
     
