@@ -65,6 +65,8 @@ glv._set("typeIgnorename2directory", {
     "FGO": anime_directory + "FGO",
     "咒术回战": anime_directory,
     "死神": anime_directory,
+    "间谍过家家": anime_directory,
+    "租借女友": anime_directory,
     
     "虚拟歌姬": miku_directory,
     

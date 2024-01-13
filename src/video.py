@@ -37,7 +37,8 @@ class Video():
         "FGO":["玛修"],
         "咒术回战":["釘崎野薔薇"],
         "死神":["松本乱菊"],
-        "间谍过家家":["约尔"],
+        "租借女友":["水原千鹤"],
+        "间谍过家家":["约尔","夜帷"],
         
         
         # vtuber
@@ -145,12 +146,14 @@ class Video():
         "松本乱菊":["Rangiku Matsumoto"],
         "蝴蝶忍":["shinobu","kocho"],
         "约尔":["Yor Forger","福杰"],
+        "夜帷":[],
+        "水原千鹤":["水原"],
         
         # 虚拟歌姬
         "结月缘":["ゆかりさん","Yuzuki Yukari"],
         "Kangxi":[],
         "洛天依":["天依"],
-        "miku":["初音"],
+        "miku":["初音","haku"],
         "兎田ぺこら":["兎田","ぺこら"],
         
         
@@ -166,7 +169,9 @@ class Video():
         "Rollin",
         "badguy",
         "WADADA",
-        "NumberNine"
+        "NumberNine",
+        "Number 9",
+        "queencard"
     ]
     
     def __init__(self,path,filename):
