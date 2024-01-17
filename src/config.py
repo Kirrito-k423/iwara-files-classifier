@@ -32,6 +32,7 @@ glv._set("character2directory", {
     "崩三大鸭": bh_directory + "鸭鸭",
     "银狼": bh_directory + "鸭 - 但是银狼",
     "卡夫卡": bh_directory + "卡夫卡",
+    "爱莉希雅": bh_directory + "爱莉",
     
     "Kangxi": iwara_directory + "Kangxi",
     "约尔": anime_directory + "约尔",
