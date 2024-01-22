@@ -27,6 +27,7 @@ glv._set("character2directory", {
     "丽莎": genshin_directory + "夜阑琴团长迪西娅丽莎",
     "凝光": genshin_directory + "申鹤凝光",
     "申鹤": genshin_directory + "申鹤凝光",
+    "心海": genshin_directory + "心海 kokomi",
     
     # bh3
     "崩三大鸭": bh_directory + "鸭鸭",
