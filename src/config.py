@@ -4,7 +4,8 @@ import time
 
 glv._init()
 
-glv._set("download_path", "E:\Download\Video")
+# glv._set("download_path", "E:\Download\Video")
+glv._set("download_path", "G:\Video\iwaraTmp")
 # glv._set("download_path", "E:\Download")
 
 

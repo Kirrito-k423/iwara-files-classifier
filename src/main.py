@@ -18,20 +18,27 @@ def main():
         ic(file)
         videoList.append(Video(glv._get("download_path"), file))
         
-    passPrint("Print ready files:")
-    for video in videoList:
-        if video.ready == "yes":
-            video.print()
-            
-    errorPrint("Type y to move video:")
-    choice = input()
-    if choice == "y":
-        for video in videoList:
+    # 假设videoList是你的视频列表
+    for i in range(0, len(videoList), 20):  # 每20步取一次
+        video_batch = videoList[i:i+20]  # 创建包含当前20个视频的批次
+        passPrint("Print ready filesInBatch:")
+        for video in video_batch:
             if video.ready == "yes":
-                video.move()
-                # break
-    else:
-        yellowPrint("Skip movement.....")
+                video.print()  # 处理视频
+
+        errorPrint("Type y to move video:")
+        choice = input()
+        if choice == "y":
+            for video in videoList:
+                if video.ready == "yes":
+                    video.move()
+                    # break
+        else:
+            yellowPrint("Skip movement.....")
+            break
+
+        passPrint("Processed a batch of 20 videos")
+
     # exit()
     
     passPrint("Print not ready files:")
