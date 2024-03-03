@@ -27,6 +27,7 @@ glv._set("character2directory", {
     "克洛琳德": genshin_directory + "CHLORIDE",
     "夜兰": genshin_directory + "夜阑琴团长迪西娅丽莎",
     "丽莎": genshin_directory + "夜阑琴团长迪西娅丽莎",
+    "迪希雅": genshin_directory + "夜阑琴团长迪西娅丽莎",
     "凝光": genshin_directory + "申鹤凝光",
     "申鹤": genshin_directory + "申鹤凝光",
     "心海": genshin_directory + "心海 kokomi",
