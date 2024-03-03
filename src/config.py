@@ -24,6 +24,7 @@ glv._set("character2directory", {
     # Genshin
     "神里凌华": genshin_directory + "凌华 Ayaka",
     "优菈": genshin_directory + "尤拉",
+    "克洛琳德": genshin_directory + "CHLORIDE",
     "夜兰": genshin_directory + "夜阑琴团长迪西娅丽莎",
     "丽莎": genshin_directory + "夜阑琴团长迪西娅丽莎",
     "凝光": genshin_directory + "申鹤凝光",
@@ -66,10 +67,12 @@ glv._set("typeIgnorename2directory", {
     # anime
     "鬼灭之刃": anime_directory + "鬼灭之刃",
     "FGO": anime_directory + "FGO",
+    "更衣人偶": anime_directory + "喜多川",
     "咒术回战": anime_directory,
     "死神": anime_directory,
     "间谍过家家": anime_directory,
     "租借女友": anime_directory,
+    "古力特": anime_directory,
     
     "虚拟歌姬": miku_directory,
     
