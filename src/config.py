@@ -40,6 +40,7 @@ glv._set("character2directory", {
     
     "Kangxi": iwara_directory + "Kangxi",
     "约尔": anime_directory + "约尔",
+    "亚丝娜": anime_directory + "Asuna",
     "老婆光": target_base_path + "\\" + "异度之刃2" 
 
     
@@ -74,6 +75,7 @@ glv._set("typeIgnorename2directory", {
     "间谍过家家": anime_directory,
     "租借女友": anime_directory,
     "古力特": anime_directory,
+    "莉可丽丝": anime_directory,
     
     "虚拟歌姬": miku_directory,
     
