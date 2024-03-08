@@ -8,13 +8,13 @@ def inputParameters():
     yellowPrint("In addition to entering some parameters, you can also modify all parameters in config.py")
     parser = argparse.ArgumentParser()
     parser.description = "please enter some parameters"
-    # parser.add_argument(
-    #     "-b",
-    #     "--BHiveCount",
-    #     help="Bhive执行时代码展开次数 / BHive Count Num (maybe useless depends on bin/bhive use)",
-    #     dest="BHiveCount",
-    #     type=int, default="500"
-    # )
+    parser.add_argument(
+        "-p",
+        "--path",
+        help="the src path of files to be moved",
+        dest="SrcPath",
+        type=str, default=glv._get("download_path")
+    )
     # parser.add_argument(
     #     "-p",
     #     "--ProcessNum",
@@ -99,7 +99,9 @@ def inputParameters():
     # )
     args = parser.parse_args()
     glv._set("debug",args.debug)
+    glv._set("download_path",args.SrcPath)
     passPrint("parameter debug is : %s " % args.debug)
+    passPrint("parameter SrcPath is : %s " % args.SrcPath)
     return args
 
 def isIceEnable(isYes):

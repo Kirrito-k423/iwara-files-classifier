@@ -307,6 +307,7 @@ class Video():
         if self.ready == "yes":
             passPrint(self.filename) 
             yellowPrint("Game \t\t{}\nCharacter \t{}\nSong\t\t{}".format(self.game, self.character, self.song))
+            yellowPrint("Src path: \t{}".format(self.old_path))
             yellowPrint("Target path: \t{}".format(self.target_path))
         else:
             print(self.filename)
