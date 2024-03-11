@@ -50,7 +50,7 @@ class Video():
         
         
         # vtuber
-        "虚拟歌姬":["结月缘","Kangxi","miku","兎田ぺこら","弱音"],    
+        "虚拟歌姬":["结月缘","Kangxi","miku","兎田ぺこら","弱音","山風"],    
         
         "Other":["Orz"],
         
@@ -59,14 +59,14 @@ class Video():
     gameNickname = \
     {
         "原神":["Genshin","ヒルチャール","Liyue","璃月","Inazuma","稻妻","绿刑者"],    
-        "崩坏三":["女武神","bh3","honkai_impact_3"],    
+        "崩坏三":["女武神","bh3","honkai_impact_3","Honkai impact"],    
         "绝区零":["ZZZ"],
         "幻塔":["塔"],    
         "崩坏星穹铁道":["StarRail","Star Rail","崩铁"],    
         "少女前线":["Frontline"],    
         "战双帕弥什":["zhan shuang","pamish","Dragontoll"],    
         "赛马娘":["ウマ娘"],
-        "碧蓝航线":["Azur","Azur Lane","AzurLane","グアム","关岛","慰安", "艦隊","航线"],
+        "碧蓝航线":["Azur","Azur Lane","AzurLane","グアム","关岛","慰安", "艦隊","航线","艦これ"],
         "碧蓝档案":["Blue"],
         "明日方舟":["Arknights"],    
         
@@ -136,7 +136,7 @@ class Video():
         "姬子":[],
         "德莉莎":["Theresa"],
         "希儿":["Seele"],
-        "萝莎莉娅":["Rozaliya"],
+        "萝莎莉娅":["Rozaliya","蘿莎莉婭"],
         "琪亚娜":["Kiana"],
         "丝柯克":["Skirk"],
         
@@ -204,11 +204,12 @@ class Video():
         "亚丝娜":["Asuna","アスナ"],
         
         # 虚拟歌姬
-        "结月缘":["ゆかりさん","Yuzuki Yukari"],
+        "结月缘":["ゆかりさん","Yuzuki Yukari","結月ゆ"],
         "Kangxi":["康熙"],
         "洛天依":["天依"],
         "miku":["初音","haku"],
         "弱音":[],
+        "山風":[],
         "兎田ぺこら":["兎田","ぺこら"],
         
         
